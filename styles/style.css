@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Outfit", sans-serif;
+  font-size: 62.50%;
+  margin: 0;
+  padding: 0.5em 2em;
+  color: white;
+  background-color: #0d192b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card {
+  background-color: #14253d;
+  padding: 2em;
+  border-radius: 1em;
+}
+
+.card__image .image--overlay {
+  background: url("../images/image-equilibrium.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 1em;
+  z-index: 1;
+}
+
+.card__image .image--overlay .image--view {
+  background: url("../images/icon-view.svg");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  z-index: 2;
+  opacity: 0;
+}
+
+.card__image .image--overlay .image--view:hover, .card__image .image--overlay .image--view:focus {
+  border-radius: 1em;
+  background-color: rgba(0, 255, 247, 0.5);
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 375px) {
+  .card__image .image--overlay .image--view {
+    max-height: 300px;
+  }
+}
+
+.card__details .details--title {
+  font-size: 1.5rem;
+}
+
+.card__details .details--title:hover {
+  color: #00fff7;
+  cursor: pointer;
+}
+
+.card__details .details--info {
+  font-size: 1.1rem;
+  color: #8bacda;
+}
+
+.card__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-bottom: 2px solid #2f415b;
+}
+
+.card__price .price--eth {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 0.5em;
+}
+
+.card__price .price--eth .eth--img {
+  width: 5%;
+}
+
+.card__price .price--eth .eth--price {
+  font-size: 1rem;
+  color: #00fff7;
+  font-weight: 600;
+}
+
+.card__price .price--date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 0.5em;
+  width: 50%;
+}
+
+.card__price .price--date .date--clock {
+  width: 15%;
+}
+
+.card__price .price--date .date--day {
+  font-size: 1rem;
+  opacity: 0.5;
+}
+
+.card__creation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding-top: 1em;
+  gap: 1em;
+}
+
+.card__creation .creation--img {
+  width: 13%;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.card__creation .creation--info {
+  font-size: 1rem;
+  color: #8bacda;
+}
+
+.card__creation .creation--info span a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.card__creation .creation--info span a:hover {
+  color: #00fff7;
+}
+
+@media only screen and (min-width: 375px) {
+  .card {
+    max-width: 400px;
+    padding: 3em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

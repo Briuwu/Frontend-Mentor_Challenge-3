@@ -1,0 +1,177 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+$font: 'Outfit', sans-serif;
+
+// PRIMARY COLORS
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+// BACKGROUND COLORS
+$main-bg: hsl(217, 54%, 11%);
+$card-bg: hsl(216, 50%, 16%);
+
+
+// MIXINS
+@mixin mq ($size) {
+  @media only screen and (min-width: $size){
+    @content;
+  }
+}
+
+@mixin flex($type, $align, $justify, $direction) {
+  display: $type;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+
+// CSS RESETS
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: $font;
+  font-size: 62.50%;
+  margin: 0;
+  padding: 0.5em 2em;
+  color: $white;
+  background-color: $main-bg;
+  @include flex(flex, center, center, column);
+}
+
+// CSS DESIGN
+.card {
+  background-color: $card-bg;
+  padding: 2em;
+  border-radius: 1em;
+    
+  &__image {
+    .image--overlay {
+      background: url('../images/image-equilibrium.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 1em;
+      z-index: 1;
+
+      .image--view {
+        background: url('../images/icon-view.svg');
+        display: flex;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+        z-index: 2;
+        opacity: 0;
+
+        &:hover,
+        &:focus {
+          border-radius: 1em;
+          background-color: hsla(178, 100%, 50%, 0.5);
+          opacity: 1;
+          cursor: pointer;
+        }
+
+        @include mq(375px){
+          max-height: 300px;
+        }
+      }
+    }
+  }
+
+  &__details {
+
+    .details--title {
+      font-size: 1.5rem;
+
+      &:hover {
+        color: $cyan;
+        cursor: pointer;
+      }
+    }
+
+    .details--info {
+      font-size: 1.1rem;
+      color: $soft-blue;
+    }
+  }
+
+  &__price {
+    @include flex(flex, center, space-between, row);
+    border-bottom: 2px solid  $line;
+  
+    .price--eth {
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5em;
+      
+
+      .eth--img {
+        width: 5%;
+      }
+
+      .eth--price {
+        font-size: 1rem;
+        color: $cyan;
+        font-weight: 600;
+      }
+    }
+
+    .price--date {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5em;
+      width: 50%;
+
+      .date--clock {
+        width: 15%;
+      }
+
+      .date--day {
+        font-size: 1rem;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__creation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 1em;
+    gap: 1em;
+
+    .creation--img {
+      width: 13%;
+      border-radius: 50%;
+      border: 1px solid $white;
+    }
+
+    .creation--info {
+      font-size: 1rem;
+      color: $soft-blue;
+      
+      span a{
+        color: $white;
+        text-decoration: none;
+        font-weight: 400;
+
+        &:hover {
+          color: $cyan;
+        }
+      }
+    }
+  }
+
+  @include mq(375px){
+    max-width: 400px;
+    padding: 3em;
+  }
+}
